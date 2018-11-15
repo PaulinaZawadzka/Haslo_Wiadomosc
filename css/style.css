@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    font-family: arial;
+    margin: 0;
+}
+
+
+header {
+    position: relative;
+    height: 400px;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 320px;
+    background: url(../img/wave.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+label,
+input {
+    height: 50px;
+    line-height: 50px;
+    font-size: 40px;
+    margin: 30px auto;
+    display: block;
+    outline: none;
+}
+
+input:active,
+input:focus {
+    outline: 2px solid red;
+}
+
+div.message {
+    font-size: 30px;
+    border: 2px solid white;
+    padding: 30px;
+    width: 50%;
+    margin: 30px auto;
+    background-color: black;
+}
+
+div.neon {
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #adff2f, 0 0 70px #adff2f, 0 0 80px #adff2f, 0 0 100px #adff2f, 0 0 150px #adff2f;
+}
+
+div.retro {
+    text-transform: uppercase;
+    text-shadow: 5px 5px 0px #eee, 5px 5px 0px #000;
+    color: #000;
+    border: 2px solid black;
+    background-color: #fff;
+}
+
+.img-box {
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.img-box-left {
+    left: 5%;
+}
+
+.img-box-right {
+    right: 5%;
+}
+
+img {
+    height: 100%;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+
+div.card {
+    cursor: pointer;
+    width: 150px;
+    height: 200px;
+    text-align: center;
+}
+
+h2 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+    border: 1px solid #adff2f;
+}
+
+.front.img {
+    height: 100%;
+}
+
+.back {
+    background: linear-gradient(180deg, #cfffcf, #adff2f 50%, #cfffcf);
+    transform: rotateY(0deg);
+}
+
+.front {
+    transform: rotateY(180deg);
+    background-color: white;
+}
+
+div.card:hover>.front {
+    transform: rotateY(0deg);
+}
+
+div.card:hover>.back {
+    transform: rotateY(-180deg);
+}
+
+@media (max-width: 900px) {
+    div.message {
+        font-size: 15px;
+    }
+
+    .img-box {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 50px;
+    }
+
+    .middle {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
